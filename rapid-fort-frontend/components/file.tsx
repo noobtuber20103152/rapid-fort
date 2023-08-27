@@ -6,6 +6,7 @@ import React from "react";
 async function File() {
   let data: any = await fetch(`${baseUrl}/files`, { next: { revalidate: 1 } });
   data = await data.json();
+  console.log(data);
   data = data?.files;
   return (
     <>

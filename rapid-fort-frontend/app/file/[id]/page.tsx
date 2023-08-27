@@ -8,7 +8,7 @@ async function Page({ params }: any) {
   console.log(`${baseUrl}/files/${id}`);
   let data = (await axios.get(`${baseUrl}/files/${id}`))?.data?.file;
   var myDate = new Date(data?.timestamp?.seconds * 1000);
-  var formatedTime = myDate.toJSON();
+  var formatedTime = myDate?.toJSON();
   console.log(data);
   return (
     <>
@@ -51,7 +51,7 @@ async function Page({ params }: any) {
                 >
                   Upload Date
                 </th>
-                <td className="px-6 py-4">{formatedTime.slice(0, 10)}</td>
+                <td className="px-6 py-4">{formatedTime?.slice(0, 10)}</td>
               </tr>
               <tr className="bg-white border-b">
                 <th
