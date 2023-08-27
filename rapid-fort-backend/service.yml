@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotation:
+    cloud.google.com/neg: '{"ingress":true}'
+  creationTimestamp: "2023-082721:37:52Z"
+  finalizers:
+    - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    app: rapid-fort-image
+  name: rapid-fort-image
+  namespace: default
+  resourceVersion: "26827"
+  uid: 6fa1deb1-3457-4e78-b03a-e6752e08b496
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 34.118.227.198
+  clusterIPs:
+    - 34.118.227.198
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ports:
+    - nodePort: 30823
+      port: 80
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app: rapid-fort-image
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+      - ip: 35.202.124.42
