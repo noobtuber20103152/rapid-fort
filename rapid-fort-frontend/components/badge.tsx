@@ -19,7 +19,7 @@ function Badge() {
             d="M1 5.917 5.724 10.5 15 1.5"
           />
         </svg>{" "}
-        <span className="ml-2">youe new uploaded file</span>
+        <span className="ml-2">your new uploaded file</span>
       </span>
     </>
   );

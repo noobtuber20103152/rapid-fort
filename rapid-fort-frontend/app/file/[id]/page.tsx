@@ -1,19 +1,18 @@
 import baseUrl from "@/apiRoute";
+import Display from "@/components/display";
 import axios from "axios";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-async function Page({ params }: any) {
+export default async function Home({ params }: any) {
   const { id } = params;
-  console.log(`${baseUrl}/files/${id}`);
   let data = (await axios.get(`${baseUrl}/files/${id}`))?.data?.file;
   var myDate = new Date(data?.timestamp?.seconds * 1000);
   var formatedTime = myDate?.toJSON();
-  console.log(data);
   return (
     <>
-      <div className="container mx-auto mt-6">
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <div className="container md:px-0  px-2 mx-auto mt-6">
+        <div className="relative  overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
               <tr>
@@ -42,7 +41,7 @@ async function Page({ params }: any) {
                 >
                   File Size
                 </th>
-                <td className="px-6 py-4">{data?.size}</td>
+                <td className="px-6 py-4">{data?.size} Bytes</td>
               </tr>
               <tr className="bg-white border-b">
                 <th
@@ -82,9 +81,8 @@ async function Page({ params }: any) {
             </tbody>
           </table>
         </div>
+        <Display data={data}/>
       </div>
     </>
   );
 }
-
-export default Page;

@@ -20,7 +20,7 @@ export default function Form() {
     axios
       .post(`${baseUrl}/upload`, formData)
       .then((res) => {
-        toast.success("File upload successfully!!");
+        toast.success("File upload successfully!!", { duration: 5000 });
         console.log(res);
         setFile(null);
         setData(res.data);
@@ -35,7 +35,7 @@ export default function Form() {
       <Toaster position="top-center" reverseOrder={false} />
 
       <div className="container mx-auto my-10 md:px-0 px-4">
-        <h1 className="text-3xl font-semibold my-4">
+        <h1 className="text-2xl md:text-3xl font-semibold my-4">
           Upload your file and get details
         </h1>
         <div className=" items-center justify-center w-full">
@@ -94,7 +94,7 @@ export default function Form() {
                     drag and drop
                   </p>
                   <p className="text-xs text-gray-500 dark:text-gray-400">
-                    SVG, PNG, JPG or GIF (MAX. 800x400px)
+                    SVG, PNG, JPG , GIF, PDF
                   </p>
                 </div>
               </>
@@ -152,7 +152,7 @@ export default function Form() {
       </div>
       {/* {data?.filename} */}
       <div className="container mx-auto">
-        <h1 className="text-2xl font-medium">
+        <h1 className="text-xl px-5 md:text-2xl font-medium">
           Previous uploaded files, click to get details.
         </h1>
         {data?.originalname && (

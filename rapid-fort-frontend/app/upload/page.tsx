@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import baseUrl from "@/apiRoute";
 
-function Page() {
+export default function Home() {
   const [file, setFile] = useState<any>();
   const upload = () => {
     const formData = new FormData();
@@ -25,4 +25,3 @@ function Page() {
   );
 }
 
-export default Page;
