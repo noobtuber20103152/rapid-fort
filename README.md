@@ -10,6 +10,11 @@ First and foremost, I would like to express my gratitude to Rapid Fort and its t
 ```
   git clone https://github.com/noobtuber20103152/rapid-fort
 ```
+
+#### Run .sh file 
+```
+./rapid.sh
+```
 ## Steps to run server
 
 after clone this repo open a new terminal in current directoy and run below command
