@@ -17,7 +17,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.send("Firebase demo App of nodejs-db-demo Project.");
+  res.send("Home route of the api , please use /files and /files/:id for more endpoints");
 });
 
 app.use("/upload", uploadRouter);
