@@ -1,7 +1,6 @@
 import express, { Express } from "express";
 import uploadRouter from "./src/controllers/upload-file.controller";
 import fileRouter from "./src/controllers/getfile.controller";
-import cityRouter from "./src/controllers/cities-crud.controller";
 import bodyParser from "body-parser";
 import * as dotenv from "dotenv";
 import cors from "cors";
@@ -23,7 +22,6 @@ app.get("/", (req, res) => {
 
 app.use("/upload", uploadRouter);
 app.use("/files", fileRouter);
-app.use("/city", cityRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
